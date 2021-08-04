@@ -8,14 +8,15 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
   netcat-openbsd rsync tcpdump procps grep coreutils diffutils \
   bind9-host wget curl socat vim-nox less
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mini-httpd
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install stress
-#RUN DEBIAN_FRONTEND=noninteractive apt-get -y install redis-cli
 
 RUN rm /var/www/html/index.mini-httpd.html && echo ok >/var/www/html/index.html
 RUN mkdir -p /var/www/html/cgi-bin
 COPY cgi-bin/ /var/www/html/cgi-bin
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install redis-tools
 
 USER root
 WORKDIR /root
