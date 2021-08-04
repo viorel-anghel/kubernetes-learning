@@ -1,0 +1,18 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: dummy
+spec:
+  containers:
+    - name: dummy
+      image: vvang/dummy:0.1
+      volumeMounts: 
+        - name: hostvol
+          mountPath: /mnt
+  restartPolicy: Always
+
+  volumes:
+    - name: hostvol
+      hostPath:
+        path: /
+
