@@ -2,10 +2,12 @@
 
 ## dummy container image features
 
-- created from Ubuntu with familiar tools for simple debugging tasks, for example ping, tcpdump
-- some packages are just for convenience, for instance I prefer `ifconfig` to `ip a`
+- created from Ubuntu with familiar tools for simple debugging tasks, for example ping, netcat
+- some client tools like mysql (client only) and redis-cli
+- some packages are just for my convenience, for instance I prefer `ifconfig` to `ip a` and `netstat` to `ss`
 - it runs a very simple and light web server on port 80
-- the webserver has support for cgi and you can access some URLs like http://<pod IP>/cgi-bin/status
+- the webserver has support for cgi and you can access some URLs like http://<pod IP>/cgi-bin/status 
+(look into cgi-bin directory here for more)
 
 ## build and use
 
